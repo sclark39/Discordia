@@ -105,9 +105,18 @@ local function dateToTime(dateString)
 	}) - offset
 end
 
+local function shallowCopyArray(tbl) 
+	local ret = {}
+	for i=1,#tbl do
+		ret[i] = tbl[i]
+	end
+	return ret
+end
+
 return {
 	camelify = camelify,
 	dateToTime = dateToTime,
 	snowflakeToTime = snowflakeToTime,
 	snowflakeToDate = snowflakeToDate,
+	shallowCopyArray = shallowCopyArray,
 }
